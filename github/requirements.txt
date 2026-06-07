@@ -1,0 +1,6 @@
+winsdk
+infi.systray
+asyncio
+pyinstaller
+eel
+requests
