@@ -1,0 +1,51 @@
+[
+	{
+		"name": "host",
+		"label": "Host",
+		"default": "127.0.0.1",
+		"type": "str"
+	},
+	{
+		"name": "port",
+		"label": "Port",
+		"default": 6767,
+		"type": "int",
+		"min": 1
+	},
+	{
+		"name": "interval",
+		"label": "Polling interval",
+		"default": 3,
+		"type": "int",
+		"min": 1,
+		"promt": "Indicates the delay between requests to the Media Player API"
+	},
+	{
+		"name": "theme",
+		"label": "Theme",
+		"values": [
+			{"name": "light", "label": "Light"},
+			{"name": "dark", "label": "Dark"}
+		],
+		"default": "light",
+		"type": "str"
+	},
+	{
+		"name": "display_progressbar",
+		"label": "Display progressbar",
+		"type": "bool",
+		"default": true
+	},
+	{
+		"name": "display_time",
+		"label": "Display time",
+		"type": "bool",
+		"default": true
+	},
+	{
+		"name": "preview_mode",
+		"label": "Preview mode",
+		"type": "bool",
+		"default": false
+	}
+]
