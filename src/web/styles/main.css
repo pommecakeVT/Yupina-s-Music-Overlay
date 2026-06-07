@@ -1,0 +1,246 @@
+/* ================================================
+   Needy Girl Overdose — Melody Monitor skin
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #80F9E4;
+    font-family: 'DotGothic16', 'MS Gothic', monospace;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    /* vars used by mod system */
+    --background: #FFFCFF;
+    --shadow: none;
+    --title-text-color:        #3C11CD;
+    --artist-text-color:       #3C11CD;
+    --progress-bar-color:      #3C11CD;
+    --progress-bar-background: #c8b8e8;
+    --margin: 0px;
+    --padding: 0px;
+}
+
+/* ── Title bar ────────────────────────────────── */
+.ngo-titlebar {
+    margin: 4px 4px 0 4px;
+    height: 20px;
+    background: #F3CCF4;
+    outline: 1px solid #6330CB;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    flex-shrink: 0;
+}
+
+.ngo-titlebar-left{
+    font-family: 'DotGothic16', monospace;
+    font-size: 11px;
+    color: #3C11CD;
+    letter-spacing: 0.5px;
+}
+
+.ngo-titlebar-right {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.ngo-fake-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+    color: #3C11CD;
+    outline: 1px solid #6330CB;
+    cursor: default;
+    line-height: 1;
+}
+
+/* ── Track info card ──────────────────────────── */
+.track-info {
+    position: relative;
+    margin: 6px 4px 0 4px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #FFFCFF;
+    outline: 1px solid #6330CB;
+    overflow: hidden;
+    opacity: 100;
+    transition: opacity 0.3s;
+    user-select: none;
+    min-height: 0;
+}
+.track-info.active {
+    opacity: 1;
+}
+
+/* ── Cover — full width, pixelated ───────────── */
+.track-image {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    object-fit: cover;
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* ── Details zone below cover ────────────────── */
+.track-details {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 6px 6px 6px;
+    background: #FFFCFF;
+    bottom: 3px;
+    left: 0;
+    right: 0;
+}
+
+.track-name {
+    font-family: 'DotGothic16', monospace;
+    font-size: clamp(10px, 4vw, 24px);
+    color: #3C11CD;
+    text-align: center;
+    white-space: nowrap;
+    width: fit-content;
+    max-width: 100%;
+    overflow: hidden;
+    line-height: 1.1;
+}
+.track-name.marquee {
+    animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+    0%   { transform: translateX(60%); }
+    100% { transform: translateX(-100%); }
+}
+
+.track-author {
+    font-family: 'DotGothic16', monospace;
+    font-size: clamp(8px, 3vw, 20px);
+    color: #3C11CD;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    line-height: 1.1;
+    margin-top: 2px;
+}
+
+/* ── Controls ─────────────────────────────────── */
+.ngo-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.ngo-ctrl-btn {
+    font-size: 14px;
+    color: #3C11CD;
+    cursor: default;
+    flex-shrink: 0;
+}
+.ngo-ctrl-play {
+    font-size: 16px;
+}
+
+/* ── Progress bar — collée en bas du track-info ── */
+.track-info {
+    position: relative;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;  /* ajuste l'épaisseur ici */
+    background: var(--progress-bar-background);
+    overflow: hidden;
+    margin: 0;
+}
+.progress-bar.hide,
+[display_progressbar="false"] .progress-bar {
+    display: none;
+}
+
+.progress {
+    height: 100%;
+    background: var(--progress-bar-color);
+    position: relative;
+}
+/* ── Timestamps ──────────────────────────────── */
+.time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'DotGothic16', monospace;
+    font-size: 10px;
+    color: #3C11CD;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+.time.hide,
+[display_time="false"] .time {
+    display: none;
+}
+
+/* ── Bottom widget: pink rect + squares, no outline ── */
+.ngo-bottom-bar {
+    margin: 10px 4px 0 4px;
+    height: 18px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 4px;
+}
+
+.ngo-bottom-pink {
+    width: 48px;
+    height: 100%;
+    background: #F3CCF4;
+    outline: 2px solid #6330CB;
+    flex-shrink: 0;
+    margin-left: 1px;
+}
+
+.ngo-bottom-dots {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+  
+}
+
+.ngo-bottom-dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    outline: 2px solid #3C11CD;
+    background: transparent;
+    margin-left: 2px;
+}
