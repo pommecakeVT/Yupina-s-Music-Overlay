@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yupina's Music Overlay</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/dark.css">
+    <script src="/eel.js"></script>
+    <script src="/scripts/main.js" defer></script>
+</head>
+<body>
+    <!-- Title bar -->
+    <div class="ngo-titlebar">
+        <span class="ngo-titlebar-left">■ Media Player</span>
+        <div class="ngo-titlebar-right">
+            <span class="ngo-fake-btn">⚙︎</span>
+            <span class="ngo-fake-btn">✕</span>
+        </div>
+    </div>
+
+    <!-- Gap between titlebar and track info: handled by CSS margin -->
+
+    <!-- Track info card -->
+    <div class="track-info">
+        <img class="track-image" id="trackImage" src="/images/disk.svg" default="/images/disk.svg" draggable="false">
+        <div class="track-details">
+            <div class="track-text">
+                <div class="track-name" id="trackName"></div>
+                <div class="track-author" id="trackAuthor"></div>
+            </div>
+            <div class="time">
+                <div class="time-current">0:00</div>
+            	<div class="ngo-controls">
+            		<span class="ngo-ctrl-btn">|◀</span>
+             		<span class="ngo-ctrl-btn ngo-ctrl-play">▶</span>
+                	<span class="ngo-ctrl-btn">▶|</span>
+            	</div>
+                <div class="time-total">0:00</div>
+            </div>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <!-- Bottom widget: pink rect + 3 squares -->
+    <div class="ngo-bottom-bar">
+        <div class="ngo-bottom-pink"></div>
+        <div class="ngo-bottom-dots">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</body>
+</html>
