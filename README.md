@@ -11,7 +11,7 @@
 ## Installation
 1. Téléchargez l'app depuis les dernières [Releases](https://github.com/pommecakeVT/Yupina-s-Music-Overlay/releases).
 2. Lancez `Yupina's Music Overlay.exe` (L'app s'ouvrira en minimisée dans la barre des tâches).
-3. Cliquez sur `Ouvrir dans le navigateur` et copiez le lien dans votre navigateur.
+3. Cliquez sur `Ouvrir le lien dans le navigateur` et copiez le lien dans votre navigateur.
 4. Ajouter une nouvelle source OBS (Navigateur Web).
 5. Collez le lien.
 6. Ajuster la largeur et la hauteur (recommandé : largeur : 330px, Hauteur : 450px).
