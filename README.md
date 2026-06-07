@@ -4,6 +4,7 @@
     <img align="left" src="https://shields.io/badge/version-0.0.1-orange">
 </p>
 <br>
+Un overlay "now playing" inspiré du jeu Needy Girl Overdose codé pour [Yupina](https://www.twitch.tv/yupiina)
 <img src="github/images/1.png" width="600px">
 
 ### ⚠️Fonctionne uniquement sur windows⚠️
